@@ -1,0 +1,32 @@
+import random as rn
+from matplotlib import pyplot as plt
+ 
+# creating random movement 
+
+x_coords = []
+y_move = []
+y_move2 = []
+n = 0
+for i in range(1000):
+    n+=1
+    y_move.append(rn.randint(-1,1))
+    y_move2.append(rn.randint(-1,1))
+    x_coords.append(n)
+    
+y_coords = []
+y_coords2 = []
+
+ycoor1 = 0
+ycoor2 = 0
+
+for i in y_move:
+    y_coords.append(ycoor1)
+    ycoor1 += i
+for i in y_move2:
+    y_coords2.append(ycoor2)
+    ycoor2 += i
+    
+
+plt.plot(x_coords, y_coords)
+plt.plot(x_coords, y_coords2)
+plt.show()
