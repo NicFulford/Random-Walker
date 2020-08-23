@@ -1,0 +1,35 @@
+from matplotlib import pyplot as plt
+import random as rn
+
+class RandomWalk:
+
+    def __init__(self):
+        self.x_move = []
+        self.y_move = []
+        self.x_coords = []
+        self.y_coords = []
+        self.xcoor1  = 0
+        self.ycoor1 = 0
+
+    def xymove(self):
+        for i in range(1000):
+            self.x_move.append(rn.randint(-1,1))
+        for i in self.x_move:
+            if i == 0:
+                ind = rn.randint(0,1)
+                if ind == 0:
+                    self.y_move.append(-1)
+                elif ind == 1:
+                    self.y_move.append(1)
+            else:
+                self.y_move.append(rn.randint(-1,1))
+
+        for i in self.x_move:
+            self.x_coords.append(self.xcoor1)
+            self.xcoor1 += i
+
+        for i in self.y_move:
+            self.y_coords.append(self.ycoor1)
+            self.ycoor1 += i
+        return self.x_coords, self.y_coords
+       
