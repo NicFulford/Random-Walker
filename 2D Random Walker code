@@ -1,0 +1,44 @@
+import random as rn
+from matplotlib import pyplot as plt
+ 
+plt.style.use("seaborn")
+
+# creating random movement 
+
+x_move = []
+y_move = []
+
+for i in range(1000):
+    x_move.append(rn.randint(-1,1))
+
+for i in x_move:
+    if i == 0:
+        ind = rn.randint(0,1)
+        if ind == 0:
+            y_move.append(-1)
+        elif ind == 1:
+            y_move.append(1)
+    else:
+        y_move.append(rn.randint(-1,1))
+
+# using movement to plot coords
+
+x_coords = []
+y_coords = []
+xcoor1  = 0
+ycoor1 = 0
+for i in x_move:
+    x_coords.append(xcoor1)
+    xcoor1 += i
+    
+
+for i in y_move:
+    y_coords.append(ycoor1)
+    ycoor1 += i
+    
+
+plt.plot(x_coords, y_coords, linestyle= ":", color = "g", marker=".")
+plt.grid()
+plt.show()
+
+# this code contain the matplotlib plot functions 
