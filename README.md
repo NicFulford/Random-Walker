@@ -1,1 +1,0 @@
-intro to Random Walker
